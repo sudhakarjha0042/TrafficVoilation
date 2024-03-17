@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$=%8h^c$9%5#zuu6fb*(@29l6(47$gl3o2=ygdb3l#7n0^c761
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # added from my side for the images
 MEDIA_URL = '/media/'
@@ -96,8 +96,12 @@ WSGI_APPLICATION = 'carproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
